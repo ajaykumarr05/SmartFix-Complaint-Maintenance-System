@@ -22,7 +22,7 @@ public class SecurityConfig {
             .cors(cors->cors.configurationSource(corsConfigurationSource()))
             .sessionManagement(s->s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(a->a
-                .requestMatchers("/api/auth/**","/error").permitAll()
+                .requestMatchers("/", "/api/auth/**", "/error").permitAll()
                 .requestMatchers(HttpMethod.OPTIONS,"/**").permitAll()
                 .anyRequest().authenticated())
             .addFilterBefore(jwt, UsernamePasswordAuthenticationFilter.class).build();
