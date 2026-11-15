@@ -1,7 +1,7 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {LayoutDashboard, Ticket, Plus, LogOut, Wrench, Search, Bell, ChevronRight, Clock3, CheckCircle2, AlertTriangle, Users, Menu, X, ClipboardList, RefreshCw} from 'lucide-react';
 
-const API='http://localhost:8080/api';
+const API='https://smartfix-backend-sxb8.onrender.com/api';
 const readUser=()=>{try{return JSON.parse(localStorage.getItem('smartfixUser'))}catch{return null}};
 async function request(path, options={}) {
   const token=localStorage.getItem('smartfixToken');
